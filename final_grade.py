@@ -1,8 +1,12 @@
 
-def Final_Grade (Homework,Test):
-    total=Homework+Test
-    HWpercent=(Homework/total)*100
-    TPercent=(Test/total)*100
-    return TPercent
+def Final_Grade (Hw,t):
+    
+    HWpercent=Hw*0.3
+    TPercent=t*0.7
+    Overall=HWpercent+TPercent
+    return Overall
 
-print(Final_Grade(5,7))
+
+
+
+print(Final_Grade(25,50))
