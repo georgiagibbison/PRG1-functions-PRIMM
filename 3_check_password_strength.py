@@ -26,9 +26,23 @@ def check_password_strength(password):
 
 # Test passwords
 passwords = ["hello", "Hello123", "PASSWORD", "MyPass123!"]
+special_chars=[".", ",", "!", "@", "?", "/", "£", "&", "*"]
 for pwd in passwords:
     score, issues = check_password_strength(pwd)
     print(f"'{pwd}': Score {score}/4")
+
     for issue in issues:
         print(f"  - {issue}")
-    print()
+    if score<=1:
+            print("Password is Weak")
+    elif score == 2 or score == 3:
+        print("Password is Medium")
+    elif score >= 3:
+        print("Password is strong")
+    for char in pwd:
+        if char in special_chars:
+            print("Valid")
+        else:
+            print("Invalid")
+
+print()
