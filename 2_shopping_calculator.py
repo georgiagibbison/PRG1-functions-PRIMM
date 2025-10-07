@@ -1,7 +1,8 @@
-def calculate_total(price, tax_rate=0.20, discount=0):
+def calculate_total(price, tax_rate=0.20, discount=0, ):
     subtotal = price - discount
     tax = subtotal * tax_rate
-    total = subtotal + tax
+    total = subtotal + tax 
+    total=total*1.12
     return total
 
 # Test cases
