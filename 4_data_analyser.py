@@ -10,6 +10,7 @@ def analyse_scores(scores):
    
     # Count grades
     grade_counts = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0}
+    grade_percentages = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0}
     for score in scores:
         if score >= 90:
             grade_counts["A"] += 1
@@ -25,19 +26,25 @@ def analyse_scores(scores):
           
         else:
             grade_counts["F"] += 1
+
+    for grade in grade_counts:
+        grade_percentages[grade]=f"{(grade_counts[grade]/len(scores)*100)}%"
     
     return {
-        "average": round(average, 2),
-        "highest": highest,
-        "lowest": lowest,
-        "total_students": len(scores),
-        "grade_distribution": grade_counts
-        
-    }
+            "average": round(average, 2),
+            "highest": highest,
+            "lowest": lowest,
+            "total_students": len(scores),
+            "grade_distribution": grade_counts,
+            "grade_percentage":grade_percentages,
+            
+            }
 
 
 # Test data
 test_scores = [85, 92, 78, 90, 87, 95, 82, 88, 91, 79]
+total_tests = len(test_scores)
+
 import statistics
 median=(statistics.median(test_scores))
 
@@ -63,4 +70,4 @@ print(analyse_scores(test_scores))
 print(median)
 print("\nEmpty List Test:")
 print(analyse_scores(empty_list))
-print("Grade %")
+
