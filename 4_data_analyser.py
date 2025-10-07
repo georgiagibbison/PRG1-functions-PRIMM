@@ -6,7 +6,7 @@ def analyse_scores(scores):
     average = total / len(scores)
     highest = max(scores)
     lowest = min(scores)
-    
+   
     # Count grades
     grade_counts = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0}
     for score in scores:
@@ -32,6 +32,15 @@ def analyse_scores(scores):
 # Test data
 test_scores = [85, 92, 78, 90, 87, 95, 82, 88, 91, 79]
 empty_list = []
+length=len(test_scores)
+i=0
+while length>0:
+    if test_scores[i]>=60:
+        print("you have passed")
+        length=length-1
+    else:
+        print("you have failed")
+        length=length-1
 
 print("Test Results:")
 print(analyse_scores(test_scores))
